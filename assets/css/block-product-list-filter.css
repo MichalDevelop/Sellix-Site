@@ -1,0 +1,82 @@
+.paylix-product-list-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
+  margin-left: -0.75rem;
+  width: calc(100% + 1.5rem);
+}
+
+.paylix-shop-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0.5rem;
+  width: 50%;
+  margin-bottom: 0;
+  padding: 0 0.75rem;
+}
+
+.paylix-product-list-header .paylix-dropdown {
+  width: 25%;
+  padding: 0 0.75rem;
+}
+.paylix-product-list-header .paylix-dropdown:last-child {
+  margin-right: 0;
+}
+
+.paylix-product-list-header .paylix-sort-select {
+  width: 25%;
+}
+
+.paylix-dropdown .select2-container--paylix {
+  width: 100% !important;
+  cursor: pointer;
+}
+
+.paylix-dropdown .select2-container--paylix .select2-selection__arrow b {
+  margin-right: 8px;
+}
+
+.paylix-dropdown .select2-container--paylix .select2-selection--single[aria-expanded='true'] {
+  border-color: var(--brandColor) !important;
+}
+
+@media (max-width: 768px) {
+  .paylix-product-list-header {
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .paylix-shop-search {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+
+  .paylix-shop-search .fas {
+    right: 1.5rem !important;
+  }
+
+  .paylix-product-list-header .paylix-dropdown {
+    width: 50%;
+    margin-bottom: 0.75rem;
+  }
+
+  .paylix-product-list-header .paylix-sort-select {
+    width: 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  .paylix-product-list-header .paylix-dropdown {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .paylix-product-list-header .paylix-sort-select {
+    width: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+{% set shop = global.common.shopInfo.shop %}
+{% for section in settings.section_order %}
+  {% render_section section %}
+{% endfor %}
+<script type='application/javascript'>
+  $(document).ready(function () {
+    const cart = window.paylixCartStoreFactory.getCart('{{shop.name}}');
+    $(document).on('paylixCartInitEvent', function() {
+      if (!cart.getItems().length) {
+        window.location.href = '';
+      } else {
+        $(document).off('paylixCartInitEvent');
+        $(document).on('paylixCartUpdateEvent', function() {
+          if (!cart.getItems().length) {
+            window.location.href = '';
+          }
+        })
+      }
+    });
+  });
+</script>

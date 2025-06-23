@@ -1,0 +1,187 @@
+.blocker.current {
+  text-align: inherit !important;
+  z-index: 2147483647 !important;
+  background-color: #030a16c4;
+}
+
+.paylix-modal {
+  width: 100%;
+  max-width: 640px;
+  padding: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--backgroundAccentLight);
+  border-radius: 0.5rem;
+  position: absolute;
+  max-height: 90vh;
+  overflow: auto;
+  border: 1px solid var(--borderColor);
+  box-shadow: 0px 1px 3px rgba(7, 14, 35, 0.06), 0px 2px 8px rgba(7, 14, 35, 0.05);
+  outline: none;
+}
+
+.paylix-modal:hover {
+  outline: none;
+}
+
+.paylix-modal.visible {
+  overflow: visible;
+}
+
+@media (max-width: 768px) {
+  .paylix-modal {
+    width: calc(100% - 2rem);
+    transform: translate(-50%, 0%);
+    top: 1rem;
+  }
+}
+
+.paylix-modal.confirm {
+  max-width: 400px;
+  overflow: hidden;
+}
+.paylix-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--borderColor);
+  color: var(--lightFontColor);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+@media (max-width: 768px) {
+  .paylix-modal-header {
+    padding: 1rem 1.25rem;
+  }
+}
+.paylix-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+.paylix-modal-close svg {
+  fill: grey;
+}
+.paylix-modal-body {
+  padding: 1.25rem 1.5rem;
+  min-height: 5rem;
+  color: var(--lightFontColor);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+@media (max-width: 768px) {
+  .paylix-modal-body {
+    padding: 1rem 1.25rem;
+  }
+}
+.paylix-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-top: 1px solid var(--borderColor);
+}
+@media (max-width: 768px) {
+  .paylix-modal-footer {
+    padding: 1rem 1.25rem;
+  }
+}
+.paylix-modal .paylix-text {
+  color: var(--lightFontColor);
+}
+.paylix-modal .paylix-text h1 {
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+.paylix-modal .paylix-text h2 {
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+}
+.paylix-modal .paylix-text h3 {
+  font-size: 1.3rem;
+  line-height: 2.4rem;
+}
+.paylix-modal .paylix-text h4 {
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+.paylix-modal .paylix-text h6 {
+  font-weight: 500;
+}
+.paylix-modal .paylix-text p {
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: var(--lightFontColor);
+}
+.paylix-modal .paylix-text input[type=checkbox] {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  font-size: 21px;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem -2rem;
+  transform: scale(1.25);
+}
+.paylix-modal .paylix-text input[type=checkbox]:after {
+  content: " ";
+  background-color: #fff;
+  display: inline-block;
+  margin-left: 10px;
+  padding-bottom: 5px;
+  color: #221d3e;
+  width: 17px;
+  height: 17px;
+  visibility: visible;
+  border: 2px solid #181432;
+  padding-left: 3px;
+  border-radius: 5px;
+}
+.paylix-modal .paylix-text input[type=checkbox]:checked:after {
+  content: "x";
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #181432;
+  position: relative;
+  padding-bottom: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  cursor: pointer;
+}
+.paylix-modal .paylix-text pre {
+  padding: 1rem;
+  border-radius: 3px;
+  margin-top: 1rem;
+  overflow: auto;
+  display: block;
+  line-height: 1rem;
+}
+.paylix-modal .paylix-text ul, .paylix-modal .paylix-text ol {
+  line-height: 1.5rem;
+  padding-left: 1.5rem;
+}
+.paylix-modal .paylix-text img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.paylix-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999;
+  background-color: #030a16 c4 !important;
+}

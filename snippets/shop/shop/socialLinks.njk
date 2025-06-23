@@ -1,0 +1,204 @@
+<style type='text/css'>
+  .paylix-social {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 5.6rem;
+    right: 2rem;
+    z-index: 9999;
+  }
+  .paylix-social-report {
+    color: white !important;
+    font-size: 1.2rem;
+  }
+  @media (max-width:553px) {
+    .paylix-social {
+      bottom: 4.7rem;
+      right: 1rem;
+    }
+  }
+  .paylix-social a {
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease !important;
+    width: 50px;
+    height: 50px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  @media (max-width:553px) {
+    .paylix-social a {
+      width: 45px;
+      height: 45px;
+      margin: 5px 0;
+    }
+  }
+  .paylix-social a svg {
+    transition: all .3s ease;
+    width: 28px;
+  }
+  @media (max-width:553px) {
+    .paylix-social a svg {
+      width: 23px;
+    }
+  }
+  .paylix-social a svg:hover {
+    transform: scale(1.2);
+  }
+  .paylix-social a img {
+    transition: all .3s ease;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  @media (max-width:553px) {
+    .paylix-social a img {
+      width: 1.7rem;
+    }
+  }
+  .paylix-social a img:hover {
+    transform: scale(1.2);
+  }
+  .paylix-social a i {
+    transition: all .3s ease;
+  }
+  .paylix-social a i:hover {
+    transform: scale(1.2);
+  }
+  .paylix-social-more {
+    transform: scale(1.3);
+  }
+  .paylix-social.no-crisp {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+  @media (max-width:553px) {
+    .paylix-social.no-crisp {
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+  .paylix-social a.discord_link {
+    background: #6f85dc;
+  }
+  .paylix-social a.instagram_link {
+    background: #C13584;
+  }
+  .paylix-social a.twitter_link {
+    background: #1DA1F2;
+  }
+  .paylix-social a.youtube_link {
+    background: #FF0000;
+  }
+  .paylix-social a.facebook_link {
+    background: #4267B2;
+  }
+  .paylix-social a.reddit_link {
+    background: #FF4500;
+  }
+  .paylix-social a.telegram_link {
+    background: #0088cc;
+  }
+  .paylix-social a.tiktok_link {
+    background: #EE1D52;
+  }
+  .paylix-social a.crisp_website_id {
+    background: purple;
+  }
+  .paylix-social a.helpspace {
+    background: white;
+  }
+  .paylix-social a.google_analytics_tracking_id {
+    background: transparent;
+  }
+  .paylix-social a.chevron {
+    background: var(--buttonColor);
+  }
+  .paylix-social-toggle-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .paylix-social-toggle-wrap.hide {
+    display: none;
+  }
+</style>
+
+{% set shop = global.common.shopInfo.shop %}
+    {% set links = [
+      {
+        link: shop.discord_link,
+        class: 'discord_link',
+        icon: '<i style="font-size: 22px; color: white;" class="fa-brands fa-discord"></i>'
+      },
+      {
+        link: shop.instagram_link,
+        class: 'instagram_link',
+        icon: '<i style="font-size: 22px; color: white" class="fa-brands fa-instagram"></i>'
+      },
+      {
+        link: shop.twitter_link,
+        class: 'twitter_link',
+        icon: '<i style="font-size: 22px; color: white" class="fa-brands fa-twitter"></i>'
+      },
+      {
+        link: shop.youtube_link,
+        class: 'youtube_link',
+        icon: '<i style="font-size: 22px; color: white" class="fa-brands fa-youtube"></i>'
+      },
+      {
+        link: shop.facebook_link,
+        class: 'facebook_link',
+        icon: '<i style="font-size: 22px; color: white" class="fa-brands fa-facebook"></i>'
+      },
+      {
+        link: shop.reddit_link,
+        class: 'reddit_link',
+        icon: '<i style="font-size: 22px; color: white" class="fa-brands fa-reddit-alien"></i>'
+      },
+      {
+        link: shop.telegram_link,
+        class: 'telegram_link',
+        icon: '<i style="font-size: 22px; color: white" class="fa-brands fa-telegram"></i>'
+      },
+      {
+        link: shop.tiktok_link,
+        class: 'tiktok_link',
+        icon: '<i style="font-size: 22px; color: white" class="fa-brands fa-tiktok"></i>'
+      }
+    ] | selectattr('link') %}
+    {% set link_length = links | length %}
+
+    {% macro social_link(item) %}
+      <a href="{{item.link}}" target="_blank" class="{{item.class}}">
+        {{item.icon | safe}}
+      </a>
+    {% endmacro %}
+
+<div class="paylix-social {% if not shop.crisp_website_id and not shop.helpspace_widget_id and not shop.helpspace_client_id and not shop.helpspace_token %}no-crisp{% endif %} unselectable">
+  {% if link_length > 2 %}
+    <a class="chevron">
+      <i style="font-size: 16px; color: white; padding: 1rem;" class="paylix-social-more fa-regular fa-chevron-down"></i>
+    </a>
+  {% endif %}
+  {% for item in links %}
+    {% if loop.index0 == 2 %}
+      <span class="paylix-social-toggle-wrap hide">
+    {% endif %}
+    {{ social_link(item) }}
+  {% endfor %}
+
+  {% if link_length > 2 %}
+    </span>
+  {% endif %}
+</div>
+
+{% if link_length > 2 %}
+  <script type="application/javascript">
+    $('.paylix-social .chevron').on('click', (e) => {
+      e.preventDefault();
+      $(e.target).toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+      $('.paylix-social-toggle-wrap').toggleClass('hide');
+    });
+  </script>
+{% endif %}

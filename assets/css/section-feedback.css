@@ -1,0 +1,43 @@
+.paylix-leave-feedback-screen {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto 2rem;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+.paylix-leave-feedback-screen p {
+  color: var(--darkFontColor);
+}
+
+.paylix-leave-feedback-screen .title {
+  color: var(--lightFontColor);
+}
+
+@media (max-width: 768px) {
+  .paylix-leave-feedback-screen {
+    width: 100% !important;
+  }
+}
+
+.paylix-feedback-delivery {
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  background-color: transparent;
+}
+
+.paylix-feedback-delivery:focus {
+  outline: none;
+}
+
+.paylix-feedback-delivery .react-stars-rating {
+  background-color: transparent !important;
+}
+
+.paylix-feedback-delivery .star-rating-container > span:focus {
+  outline: none;
+}
+
+.paylix-feedback-delivery .star-rating-container:focus {
+  outline: none;
+}

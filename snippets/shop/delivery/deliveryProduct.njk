@@ -1,0 +1,22 @@
+{% set invoice = args.invoice %}
+{% set info = args.info %}
+{% set text = info.delivery_text %}
+
+<div>
+  {% if text %}
+    <div class="paylix-delivery-product skip">
+      <div class="paylix-delivery-product-title">{{ 'shop.delivery.messageFrom' | t }} {{ invoice.name }}:</div>
+      <div class="paylix-delivery-product-item skip">
+        <div class="paylix-text">
+          <p>{{- text -}}</p>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% render_snippet 'Delivery digital product',
+    invoice=invoice,
+    info=info,
+    product_type=invoice.product.type
+  %}
+</div>

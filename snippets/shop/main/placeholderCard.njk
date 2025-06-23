@@ -1,0 +1,22 @@
+{% set id = uid() %}
+
+<div class="d-flex w-100 position-relative" style="opacity:0.8;">
+  <div id="paylix-card-container-{{id}}"  class="paylix-card-container">
+    <div class="paylix-card unselectable">
+
+      <div class="paylix-card-image skeleton" style="background: var(--buttonColor); opacity:.7;">
+      </div>
+
+      <div class="paylix-card-info">
+        <div class="paylix-card-title skeleton" style="background:var(--buttonColor); width: 70%; height: 12px; margin-top: 12px;">
+        </div>
+
+        <div class="paylix-card-description justify-content-between">
+          <span class="paylix-card-price skeleton" style="background: var(--buttonColor); width: 20%; height: 10px; margin-top: 10px;">
+          </span>
+          <span class="paylix-card-stock" style="background: var(--buttonColor); width: 30%; height: 10px; margin-top: 10px;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

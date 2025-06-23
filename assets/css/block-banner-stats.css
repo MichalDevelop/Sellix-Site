@@ -1,0 +1,183 @@
+.paylix-banner-feedback-wrapper {
+  width: 45%;
+}
+
+.paylix-banner.products-sold-hide .paylix-banner-feedback-wrapper {
+  width: 25%;
+}
+
+.paylix-banner-feedback {
+  font-size: 1rem;
+  color: var(--lightFontColor);
+  margin: 12px 10px 12px 12px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+}
+
+.paylix-banner-feedback-count {
+  align-items: center;
+  display: flex;
+  margin-top: 0.75rem;
+  color: var(--lightFontColor);
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.paylix-banner-feedback-count span {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.paylix-banner-feedback-star {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  margin-top: 0.75rem;
+  font-size: 18px;
+  color: var(--lightFontColor);
+}
+
+.paylix-banner-feedback-star .paylix-feedback-rating-stars {
+  margin-right: 0.1rem;
+}
+
+.paylix-banner-feedback-star svg {
+  margin-right: 0.1rem;
+}
+
+.paylix-banner-feedback-star > span:first-of-type {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.paylix-banner-feedback-star a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.paylix-banner-feedback-star span {
+  display: flex;
+  flex-direction: row;
+}
+
+.paylix-banner-feedback-star i {
+  color: var(--lightFontColor);
+  font-style: normal;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  font-size: 13px;
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .paylix-banner-feedback-wrapper {
+    width: 55%;
+  }
+
+  .paylix-banner.products-sold-hide .paylix-banner-feedback-wrapper {
+    width: 25%;
+  }
+
+  .paylix-banner-feedback {
+    font-size: 14px;
+  }
+
+  .paylix-banner-feedback-count {
+    font-size: 1rem;
+  }
+
+  .paylix-banner-feedback-star {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .paylix-banner-feedback-wrapper {
+    width: 100%;
+  }
+
+  .paylix-banner.products-sold-hide .paylix-banner-feedback-wrapper {
+    width: 100%;
+  }
+
+  .paylix-banner-feedback {
+    padding: 0 1rem 1rem 1rem;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .paylix-banner-feedback > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .paylix-banner-feedback > div > div {
+    display: flex;
+    white-space: nowrap;
+    height: 2rem;
+    margin-bottom: 0;
+    align-items: center;
+    margin-right: 0.5rem !important;
+  }
+
+  .paylix-banner-feedback-count {
+    margin: 0 0 0 0;
+  }
+
+  .paylix-banner-feedback-count span {
+    font-size: 0.9rem;
+  }
+
+  .paylix-banner-feedback-star > span:first-of-type {
+    margin-right: 0.25rem;
+  }
+
+  .paylix-banner-feedback-star {
+    margin-top: 0;
+  }
+
+  .paylix-banner-feedback-star > span:last-of-type {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    white-space: nowrap;
+  }
+
+  .paylix-banner-feedback-star > span:last-of-type i {
+    margin-top: 2px;
+    margin-left: 0.5rem;
+  }
+
+  .paylix-banner-feedback-star i {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: 0.3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .paylix-banner-feedback-star {
+    margin-top: 0;
+  }
+
+  .paylix-banner-feedback-star > span:last-of-type {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 420px) {
+  .paylix-banner-feedback {
+    padding-bottom: 0.5rem;
+  }
+
+  .paylix-banner-feedback-star i {
+    display: none;
+  }
+}
